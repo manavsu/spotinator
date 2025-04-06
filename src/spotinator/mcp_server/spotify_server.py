@@ -17,7 +17,8 @@ async def authenticate_user() -> str:
     return requests.get(LOGIN_URL).json()["login_url"]
 
 
-def queue_track(uri: str) -> str:
+@mcp.tool()
+async def queue_track(uri: str) -> str:
     """Queue a song for playback on Spotify.
 
     Args:
@@ -43,7 +44,8 @@ def queue_track(uri: str) -> str:
     return "Track queued successfully."
 
 
-def search_tracks(query: str) -> list[str]:
+@mcp.tool()
+async def search_tracks(query: str) -> list[str]:
     """Search for tracks on Spotify with the given query string.
 
     Args:

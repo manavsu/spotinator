@@ -23,8 +23,6 @@ model = ChatGoogleGenerativeAI(
     api_key=SecretStr(api_key),
 )
 
-os.environ["TAVILY_API_KEY"] = "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"
-
 memory = MemorySaver()
 
 trimmer = trim_messages(
